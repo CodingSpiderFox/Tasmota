@@ -19,44 +19,11 @@ on:
 jobs:
   base-images:
     runs-on: ubuntu-latest
-    if: github.repository == 'arendst/Tasmota'
+    if: github.repository == 'CodingSpiderFox/Tasmota'
     strategy:
       matrix:
         variant:
-          - tasmota
-          - tasmota4M
-          - tasmota-display
-          - tasmota-ir
-          - tasmota-knx
-          - tasmota-lite
-          - tasmota-minimal
-          - tasmota-sensors
-          - tasmota-zbbridge
-          - tasmota32-zbbrdgpro
-          - tasmota-zigbee
-          - tasmota32
-          - tasmota32-webcam
-          - tasmota32-bluetooth
-          - tasmota32-core2
-          - tasmota32-nspanel
-          - tasmota32-display
-          - tasmota32-ir
-          - tasmota32-lvgl
-          - tasmota32c3
-          - tasmota32c3cdc
-          - tasmota32s2
-          - tasmota32s2cdc
-          - tasmota32s3
-          - tasmota32s3cdc
-          - tasmota32solo1
-          - tasmota32solo1-safeboot
-          - tasmota32-safeboot
-          - tasmota32c3-safeboot
-          - tasmota32c3cdc-safeboot
-          - tasmota32s2-safeboot
-          - tasmota32s2cdc-safeboot
-          - tasmota32s3-safeboot
-          - tasmota32s3cdc-safeboot
+          - tasmotaTLS
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
@@ -76,10 +43,10 @@ jobs:
 
   language-images:
     runs-on: ubuntu-latest
-    if: github.repository == 'arendst/Tasmota'
+    if: github.repository == 'CodingSpiderFox/Tasmota'
     strategy:
       matrix:
-        variant: [ tasmota ]
+        variant: [ tasmotaTLS ]
         language: [ AD, AF, BG, BR, CN, CZ, DE, ES, FR, FY, GR, HE, HU, IT, KO, NL, PL, PT, RO, RU, SE, SK, TR, TW, UK, VN ]
     steps:
       - uses: actions/checkout@v2
